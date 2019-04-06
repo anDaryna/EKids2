@@ -13,25 +13,24 @@ import turtle as t
 
 t.penup()
 t.goto(-200, 200)
-a= abs(t.pos())
+a = abs(t.pos())
 t.speed(40)
 t.pendown()
 t.begin_fill()
 
-
 t.speed(200)
-
 
 t.color('red', 'yellow')
 t.begin_fill()
 while True:
     t.forward(200)
     t.left(170)
-    b= abs(t.pos())
-    if (a - 1< b < a + 1):
+    b = abs(t.pos())
+    if (a - 1 < b < a + 1):
         break
 t.end_fill()
 t.penup()
+
 
 def draw_square(color):
     t.begin_fill()
@@ -50,15 +49,15 @@ def draw_square(color):
     t.end_fill()
 
 
-t.goto(60,60)
+t.goto(60, 60)
 draw_square('purple')
-t.goto(-60,-60)
+t.goto(-60, -60)
 draw_square('orange')
-t.goto(-60,60)
+t.goto(-60, 60)
 draw_square('pink')
-t.goto(60,-60)
+t.goto(60, -60)
 draw_square('blue')
-t.goto(0,0)
+t.goto(0, 0)
 t.color('blue')
 draw_square('yellow')
 t.shape("turtle")
