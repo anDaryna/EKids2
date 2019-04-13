@@ -9,61 +9,68 @@
 В будущем ожидаю увидеть поле из разных цветов. Может, сделать цветок красивее.
 """
 
-import turtle as t
+import turtle
 
-t.penup()
-t.goto(-200, 200)
-a = abs(t.pos())
-t.speed(40)
-t.pendown()
-t.begin_fill()
-
-t.speed(200)
-
-t.color('red', 'yellow')
-t.begin_fill()
+turtle.penup()
+turtle.speed(40)
+turtle.goto(-200, 200)
+a = abs(turtle.pos())
+turtle.pendown()
+turtle.begin_fill()
+turtle.color('red', 'yellow')
 while True:
-    t.forward(200)
-    t.left(170)
-    b = abs(t.pos())
+    turtle.forward(150)
+    turtle.left(170)
+    b = abs(turtle.pos())
     if (a - 1 < b < a + 1):
         break
-t.end_fill()
-t.penup()
+turtle.end_fill()
+turtle.penup()
 
 
-def draw_square(color):
+def draw_square(color,x,y,size):
+    turtle.goto(x/60*size,y/60*size)
+    turtle.begin_fill()
+    turtle.pendown()
+    turtle.color(color, 'red')
+    turtle.forward(size)
+    turtle.left(90)
+    turtle.forward(size)
+    turtle.left(90)
+    turtle.forward(size)
+    turtle.left(90)
+    turtle.forward(size)
+    turtle.left(90)
+    turtle.fillcolor(color)
+    turtle.penup()
+    turtle.end_fill()
+
+def draw_circle(x,y,size):
+    t = turtle.Turtle()
+    t.penup()
+    t.setpos(35 + x, -15 + y)
     t.begin_fill()
     t.pendown()
-    t.color(color, 'red')
-    t.forward(70)
-    t.left(90)
-    t.forward(70)
-    t.left(90)
-    t.forward(70)
-    t.left(90)
-    t.forward(70)
-    t.left(90)
-    t.fillcolor(color)
+    t.color("yellow")
+    t.circle(50)
     t.penup()
     t.end_fill()
 
 
-t.goto(60, 60)
-draw_square('purple')
-t.goto(-60, -60)
-draw_square('orange')
-t.goto(-60, 60)
-draw_square('pink')
-t.goto(60, -60)
-draw_square('blue')
-t.goto(0, 0)
-t.color('blue')
-draw_square('yellow')
-t.shape("turtle")
-t.hideturtle()
+def draw_flower(x,y,size):
+    draw_square('purple',60+x, 60+y, size)
+    draw_square('orange',-60+x, -60+y, size)
+    draw_square('pink',-60+x, 60+y, size)
+    draw_square('blue',60+x, -60+y, size)
+    draw_circle(x,y)
 
-t.speed(30)
 
-t.exitonclick()
-done()
+draw_flower(0,30,60)
+draw_flower(-200,-200,50)
+
+
+turtle.shape("turtle")
+
+turtle.hideturtle()
+
+turtle.exitonclick()
