@@ -45,7 +45,7 @@ def draw_square(color,x,y,size):
     turtle.penup()
     turtle.end_fill()
 
-def draw_circle(x,y):
+def draw_circle(x,y,size):
     t = turtle.Turtle()
     t.penup()
     t.setpos(35 + x, -15 + y)
