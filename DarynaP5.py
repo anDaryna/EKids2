@@ -66,6 +66,7 @@ def draw_flower(x,y,size):
 
 
 draw_flower(0,30,60)
+draw_flower(0,0,70)
 draw_flower(-200,-200,50)
 
 
